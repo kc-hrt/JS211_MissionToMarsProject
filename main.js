@@ -11,11 +11,39 @@ const jobTypes = {
 
 // Your code will go here
 
+// build crewMember class
+class CrewMember {
+  // use the constructor to take in certain attributes
+  constructor(name, job, specialSkill, ship) {
+    //assign attribute to local variables. 
+    this.name = name;
+    this.job = job;
+    this.specialSkill = specialSkill;
+    this.ship = ship;
+  }
+  enterShip(shipName) {
+    this.ship = shipName;
+    shipName.crew.push(this);
+  }
+}
 
-
-
-
-
+class Ship {
+  // use the constructor to take in certain attributes
+  constructor(name, type, ability, crew) {
+    //assign attribute to local variables. 
+    this.name = name;
+    this.type = type;
+    this.ability = ability;
+    this.crew = [];
+  }
+  missionStatement() {
+    if (this.crew.length >= 1) {
+      return this.ability;
+    } else {
+      return "Can't perform a mission yet.";
+    }
+  }
+}
 
 // Begin by reading the tests and building a function that will full each one.
 // As you build, you might not have to build them in order, maybe you do...
